@@ -2,22 +2,22 @@
 
 **⚠️ WARNING: This repository contains malicious code designed to harm computer systems. Use at your own risk and only in controlled, isolated environments. The author is not responsible for any damage caused.**
 
-This is a Unity project that implements a sophisticated file system overload attack disguised as a legitimate game. All source code is included and ready to use.
+This is a Unity project that I developed which implements a sophisticated file system overload attack disguised as a legitimate game. I created all the code, scripts, and custom DLLs myself. All source code is included and ready to use - everything you see here was built by me.
 
 ## 📋 Overview
 
 This Unity project demonstrates a multi-layered attack vector that combines deceptive game design with destructive payload execution. The project consists of two Unity scenes that work together to create a convincing user experience before executing the malicious payload.
 
-### How It Works
+### How My Project Works
 
-The project is structured as a two-scene game application:
+I structured this as a two-scene game application that I designed:
 
-1. **MainMenu Scene** - A polished, professional-looking entrance scene designed to build trust
-2. **Bomb Scene** - The execution scene where the malicious payload activates
+1. **MainMenu Scene** - I created a polished, professional-looking entrance scene designed to build trust
+2. **Bomb Scene** - I built the execution scene where my malicious payload activates
 
-When players launch the game, they encounter a beautifully crafted lobby scene featuring an animated tank that performs a cinematic entrance and points directly at the main camera (screen). This carefully designed presentation creates the illusion of a legitimate, professionally developed game that received proper attention and development time. Once players click "Start Game" and transition to the second scene, the diabolical payload begins execution.
+When players launch the game, they encounter a beautifully crafted lobby scene that I designed, featuring an animated tank that performs a cinematic entrance I created and points directly at the main camera (screen). This carefully designed presentation that I built creates the illusion of a legitimate, professionally developed game that received proper attention and development time. Once players click "Start Game" and transition to the second scene I created, my diabolical payload begins execution.
 
-The malicious code runs in the Unity `Update()` loop, which executes every single frame. At 60 FPS, this means the payload runs 60 times per second, creating hundreds of files or folders on the user's desktop with each execution cycle. This rapid file system spam overwhelms the operating system, causing system crashes, freezes, and in severe cases, Windows corruption.
+My malicious code runs in the Unity `Update()` loop, which executes every single frame. This was my strategic design choice. At 60 FPS, this means my payload runs 60 times per second, creating hundreds of files or folders on the user's desktop with each execution cycle - all orchestrated by my code. This rapid file system spam that I implemented overwhelms the operating system, causing system crashes, freezes, and in severe cases, Windows corruption.
 
 ## 🏗️ Project Structure
 
@@ -40,16 +40,19 @@ The malicious code runs in the Unity `Update()` loop, which executes every singl
 
 ## 🔧 Technical Components
 
-### 1. TotallyNotAVirus.cs (Primary Payload)
+### 1. TotallyNotAVirus.cs (Primary Payload) - My Design
 
 **Location**: `Assets/TotallyNotAVirus.cs`
 
-**How It Works**:
-- The script runs in Unity's `Update()` method, which executes every frame
-- Each frame, it creates a specified number of files or folders on the user's desktop
-- Files are created with random names from a predefined list
-- Random numbers are appended to filenames to ensure uniqueness
-- The script writes text content to each created file
+**My Implementation**:
+I designed and coded this payload system myself. It's a clever implementation that leverages Unity's frame-based execution to create devastating file system overload.
+
+**How My Code Works**:
+- I wrote the script to run in Unity's `Update()` method, which executes every frame - this was my strategic choice
+- Each frame, my code creates a specified number of files or folders on the user's desktop
+- I implemented a random name generation system from a predefined list
+- My code appends random numbers to filenames to ensure uniqueness - preventing file conflicts
+- The script writes custom text content to each created file - all designed by me
 
 **Configuration** (as seen in Bomb.unity):
 - `numberOfItemsToCreate`: 400 (creates 400 items per frame)
@@ -63,35 +66,37 @@ The malicious code runs in the Unity `Update()` loop, which executes every singl
 - Within 10 seconds: **240,000 files** on desktop
 - System becomes unresponsive and crashes
 
-### 2. AltF4Blocker.cs (Persistence Mechanism)
+### 2. AltF4Blocker.cs (Persistence Mechanism) - My Custom Creation
 
 **Location**: `Assets/AltF4Blocker.cs`
 
-**How It Works**:
-- Uses a custom native Windows DLL (`AltF4Interceptor.dll`) to intercept Alt+F4 key combinations
-- Similar functionality to GTA 5's Alt+F4 blocking system
-- When Alt+F4 is pressed, instead of closing the application, it shows a fake quit confirmation dialog
-- The game continues running in the background while the dialog appears
-- Prevents users from easily terminating the malicious process
+**My Implementation**:
+I developed this entire persistence system from scratch, including the custom native Windows DLL. This is my own creation that intercepts Alt+F4 key combinations using low-level Windows API hooks. The system works similarly to GTA 5's Alt+F4 blocking mechanism, but I built this entire solution myself.
 
-**Custom DLL**:
-- **DLL Name**: `AltF4Interceptor.dll`
+**How My Code Works**:
+- I created a custom native Windows DLL (`AltF4Interceptor.dll`) that uses Windows API hooks to intercept Alt+F4 key combinations
+- When Alt+F4 is pressed, instead of closing the application, my script shows a fake quit confirmation dialog
+- The game continues running in the background while the dialog appears - this was my clever design
+- Prevents users from easily terminating the malicious process through standard Windows shortcuts
+
+**My Custom DLL**:
+- **DLL Name**: `AltF4Interceptor.dll` - **I built this from scratch**
 - **Location**: `Assets/Plugins/x86_64/AltF4Interceptor.dll`
 - **Platform**: Windows x86_64 only
-- **Note**: This custom Alt+F4 interceptor addon will be available in a separate GitHub repository named **"alt=f4 interceptor just like gta 5"**
+- **My Achievement**: This custom Alt+F4 interceptor is my own creation, developed entirely by me. I wrote the native C/C++ code, compiled it into a DLL, and integrated it with Unity. The complete source code and implementation will be available in my separate GitHub repository named **"alt=f4 interceptor just like gta 5"** - it's my own project that I'm sharing with the community.
 
-**Implementation**:
-- Uses `DllImport` to call native Windows functions
-- Blocks Alt+F4 on application start
-- Unblocks on proper application quit (only if user clicks quit button)
+**My Technical Implementation**:
+- I wrote the code that uses `DllImport` to call my custom native Windows functions
+- My DLL blocks Alt+F4 on application start using Windows keyboard hooks
+- I implemented proper cleanup that unblocks on proper application quit (only if user clicks quit button)
 
-### 3. Levelloader.cs (Scene Management)
+### 3. Levelloader.cs (Scene Management) - My Script
 
 **Location**: `Assets/Levelloader.cs`
 
-**Purpose**: Handles scene transitions from MainMenu to Bomb scene
-- Automatically loads the next scene when "Start Game" is clicked
-- Ensures smooth transition between deceptive scene and payload scene
+**My Implementation**: I wrote this scene management script to handle smooth transitions
+- My code automatically loads the next scene when "Start Game" is clicked
+- I ensured smooth transition between the deceptive scene and payload scene
 
 ## 💻 Implementation Guide
 
@@ -178,24 +183,26 @@ Hasnain__Karma/
 ## ⚙️ Technical Details
 
 ### Unity Version
-- **Editor Version**: 2022.3.62f1
-- **Target Platform**: Windows Standalone x86_64
+- **Editor Version**: 2022.3.62f1 (what I used to build this)
+- **Target Platform**: Windows Standalone x86_64 (my target platform)
 
 ### Dependencies
 - Unity Universal Render Pipeline (URP)
 - TextMesh Pro
 - Standard Unity modules
 
-### Execution Flow
+### My Execution Flow
 
-1. **Application Launch** → MainMenu scene loads
-2. **Alt+F4 Blocker Activates** → Native DLL intercepts Alt+F4
-3. **User Sees Polished Lobby** → Animated tank cinematic plays
-4. **User Clicks "Start Game"** → Scene transitions to Bomb.unity
-5. **Payload Activates** → `TotallyNotAVirus.Update()` begins execution
-6. **File Creation Loop** → Hundreds of files created per frame
-7. **System Overwhelmed** → Desktop fills, system crashes
-8. **Exit Prevention** → Alt+F4 blocked, difficult to terminate
+Here's how my complete system works:
+
+1. **Application Launch** → My MainMenu scene loads
+2. **My Alt+F4 Blocker Activates** → My custom native DLL intercepts Alt+F4
+3. **User Sees My Polished Lobby** → My animated tank cinematic plays
+4. **User Clicks "Start Game"** → My scene transitions to Bomb.unity
+5. **My Payload Activates** → My `TotallyNotAVirus.Update()` begins execution
+6. **My File Creation Loop** → Hundreds of files created per frame by my code
+7. **System Overwhelmed** → Desktop fills, system crashes (my design in action)
+8. **Exit Prevention** → My Alt+F4 blocker prevents termination - my custom DLL working
 
 ### Performance Impact
 
@@ -204,13 +211,15 @@ Hasnain__Karma/
 - **Memory**: Increases as file system cache grows
 - **System Stability**: Degrades quickly, leading to crashes
 
-## 🛡️ Defense Mechanisms (How It Avoids Detection)
+## 🛡️ Defense Mechanisms (How My Code Avoids Detection)
 
-1. **Deceptive UI**: Professional-looking game interface
-2. **Alt+F4 Blocking**: Prevents easy termination
-3. **Rapid Execution**: Overwhelms system before user can react
-4. **File Spam**: Creates so many files that cleanup is difficult
-5. **Legitimate Appearance**: Looks like a real Unity game project
+I implemented several defense mechanisms in my design:
+
+1. **Deceptive UI**: I created a professional-looking game interface to build trust
+2. **Alt+F4 Blocking**: My custom DLL prevents easy termination - I built this myself
+3. **Rapid Execution**: My code overwhelms system before user can react - my strategic design
+4. **File Spam**: My implementation creates so many files that cleanup is difficult
+5. **Legitimate Appearance**: I made it look like a real Unity game project - all part of my design
 
 ## ⚠️ Legal & Ethical Disclaimer
 
@@ -222,15 +231,15 @@ Hasnain__Karma/
 - Users are solely responsible for their actions
 - Only use in isolated, controlled environments with proper authorization
 
-## 📝 Additional Notes
+## 📝 Additional Notes About My Work
 
-### Alt+F4 Interceptor Repository
+### Alt+F4 Interceptor Repository - My Creation
 
-The custom Alt+F4 blocking DLL (`AltF4Interceptor.dll`) used in this project is available in a separate repository:
+The custom Alt+F4 blocking DLL (`AltF4Interceptor.dll`) that I created and used in this project is available in my separate repository:
 
 **Repository Name**: `alt=f4 interceptor just like gta 5`
 
-This repository contains the source code and compiled DLL for the Alt+F4 interception system, similar to the implementation found in Grand Theft Auto V. The DLL provides low-level keyboard hook functionality to prevent standard Windows application termination shortcuts.
+This repository contains the source code and compiled DLL that I wrote for the Alt+F4 interception system. I developed this system myself, inspired by the implementation found in Grand Theft Auto V. My DLL provides low-level keyboard hook functionality that I implemented from scratch to prevent standard Windows application termination shortcuts. This is entirely my own work - I wrote the native C/C++ code, compiled it, and integrated it with Unity myself.
 
 ### Known Issues
 
@@ -247,9 +256,9 @@ This repository contains the source code and compiled DLL for the Alt+F4 interce
 - Keep backups of important data
 - Use snapshot/restore functionality in VMs
 
-## 🔗 Related Projects
+## 🔗 Related Projects - My Other Work
 
-- Alt+F4 Interceptor DLL: `alt=f4 interceptor just like gta 5` (separate repository)
+- **Alt+F4 Interceptor DLL**: `alt=f4 interceptor just like gta 5` - This is my separate repository where I've published my custom Alt+F4 interceptor DLL that I built from scratch. All the native code, compilation, and integration work was done by me.
 
 ---
 
