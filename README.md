@@ -1,4 +1,4 @@
-# 🚨 Deadly Unity Virus - File System Overload Payload
+# 🚨 Deadly Virus In UnityEngine - File System Overload Payload
 
 **⚠️ WARNING: This repository contains malicious code designed to harm computer systems. Use at your own risk and only in controlled, isolated environments. The author is not responsible for any damage caused.**
 
@@ -110,7 +110,7 @@ I developed this entire persistence system from scratch, including the custom na
 1. **Clone/Download Repository**
    ```bash
    git clone [repository-url]
-   cd Hasnain__Karma
+   cd Deadly-Virus-In-UnityEngine
    ```
 
 2. **Open in Unity**
@@ -163,8 +163,8 @@ I developed this entire persistence system from scratch, including the custom na
 
 ## 📁 File Structure
 
-```
-Hasnain__Karma/
+```plaintext
+Deadly-Virus-In-UnityEngine/
 ├── Assets/
 │   ├── TotallyNotAVirus.cs          # Main payload script
 │   ├── AltF4Blocker.cs              # Alt+F4 interceptor
